@@ -14,9 +14,9 @@ from torchvision.utils import save_image
 
 # Loading and Transforming data
 
-transform = transforms.Compose([transforms.ToTensor()])
+transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))])
 
-trainTransform  = tv.transforms.Compose([tv.transforms.ToTensor()])
+trainTransform  = tv.transforms.Compose([tv.transforms.ToTensor(), tv.transforms.Normalize((0.1307,), (0.3081,))])
 
 trainset = tv.datasets.MNIST(root='./data',  train=True,download=True, transform=transform)
 
